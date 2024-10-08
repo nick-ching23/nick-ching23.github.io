@@ -1,0 +1,111 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Header Section */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* About Me Section */
+#about-me {
+    padding: 40px;
+    background-color: #fff;
+}
+
+#about-me h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+#about-me p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Projects Section */
+#projects {
+    padding: 40px;
+    background-color: #eaeaea;
+}
+
+#projects h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#projects ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px;
+    background-color: #fff;
+}
+
+#contact h2 {
+    font-size: 2em;
+    color: #333;
+}
+
+#contact p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Footer Section */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+footer button:hover {
+    background-color: #777;
+}
+
+#dynamic-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
