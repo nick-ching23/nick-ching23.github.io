@@ -19,6 +19,10 @@ body {
     background-color: #f9f9f9;
 }
 
+.lead {
+    font-size: 1.3em;
+}
+
 /* Section for main content */
 .about-info {
     padding-left: 40px; /* Add extra padding between image and text */
