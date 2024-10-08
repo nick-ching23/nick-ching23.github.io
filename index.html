@@ -1,51 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nicholas Ching</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicholas Ching</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container">
-    </div>
-
-    <div class="container">
-        <header>
-            <div class="profile_img"><img src="profile_pic.jpg" alt="Nicholas Ching" class="profile-photo"></div>
-            <h1>Your Name</h1>
-            <p class="subtitle">Candidate for Master's in Computer Science at Columbia University</p>
-        </header>
-
-        <section id="about-me">
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom">
+        <a class="navbar-brand mx-auto" href="#">Nicholas Ching</a> <!-- Center the brand as well -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#research">Research</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news">Recent News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section class="container mt-5">
+        <div class="row align-items-center"> <!-- align-items-center vertically centers the text with the image -->
+          <div class="col-md-4">
+            <img src="profile_pic.jpg" class="img-fluid" alt="Your Photo">
+            <p class="small text-muted">Photo credit: Jeffrey Or</p>
+          </div>
+          <div class="col-md-8 about-info">
+            <h1 class="display-4">Nicholas Ching</h1>
+            <p class="lead">Computer Science Master Candidate at Columbia University</p>
+            <p class="text-muted">[Software Systems, distributed computing, machine learning]</p>
+            <p>Email: <a href="mailto:nc2935@columbia.edu">nc2935@columbia.edu</a></p>
             <p>
-                I'm currently working as [Your Position] at [Your Company/University]. I completed my [Your Degree] in [Your Major] at [Your School]. My work focuses on [Your Research/Interest Areas]. I enjoy developing solutions for [Specific Projects] and have been recognized with [Awards/Honors].
+              <a href="your-cv-link.pdf" class="btn btn-primary" target="_blank">CV</a>
+              <a href="https://scholar.google.com" class="btn btn-outline-primary" target="_blank">Google Scholar</a>
+              <a href="https://twitter.com/yourprofile" class="btn btn-outline-primary" target="_blank">Twitter</a>
             </p>
-            <p>
-                My research includes [Describe your research focus or professional interests]. Feel free to explore my work via the links below or get in touch if you're interested in collaborating.
-            </p>
-            <p><strong>Pronouns:</strong> [Your Pronouns]</p>
-            <p>
-                <a href="your-cv-link.pdf" target="_blank">[CV]</a> | 
-                <a href="your-google-scholar-link" target="_blank">[Google Scholar]</a> | 
-                <a href="your-twitter-link" target="_blank">[Twitter]</a>
-            </p>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section id="recent-news">
-            <h2>Recent News</h2>
-            <ul>
-                <li>Update or achievement #1</li>
-                <li>Update or achievement #2</li>
-                <li>Update or achievement #3</li>
-            </ul>
-        </section>
+<!-- Research Section -->
+<section class="container mt-5" id="research">
+  <h2>Research</h2>
+  <p>Your research focus, including methodologies, goals, and key contributions.</p>
+  <ul>
+    <li>Topic 1 - Short description.</li>
+    <li>Topic 2 - Short description.</li>
+    <li>Topic 3 - Short description.</li>
+  </ul>
+</section>
 
-        <footer>
-            <p>&copy; 2024 [Your Name]. All rights reserved.</p>
-        </footer>
-    </div>
+<!-- Recent News Section -->
+<section class="container mt-5" id="news">
+  <h2>Recent News</h2>
+  <ul>
+    <li>📄 <strong>August 2024:</strong> Paper on X was published in <em>Journal</em>. <a href="link-to-paper" target="_blank">Read more</a>.</li>
+    <li>🎤 <strong>July 2024:</strong> Presented research at ICML 2024. <a href="link-to-talk" target="_blank">Watch talk</a>.</li>
+    <li>🎓 <strong>Spring 2024:</strong> Defended PhD thesis! Special thanks to my committee.</li>
+  </ul>
+</section>
+
+<!-- Footer Section -->
+<footer class="container mt-5">
+  <hr>
+  <p class="text-center">&copy; 2024 Nicholas Ching. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap and JS Dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
