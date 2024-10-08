@@ -3,28 +3,81 @@
     padding-left: 40px;  /* Add extra padding between image and text */
 }
 
-/* Custom Background for Navbar */
-.bg-custom {
-    background-color: #12164d;
+/* Custom colored bar at the top */
+.top-bar {
+    background-color: #343a40; /* Dark background color */
+    height: 50px; /* Adjust the height as needed */
+    width: 100%;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: #fff;  /* White text for links */
-    padding: 10px 15px; /* Add padding to links */
+/* Body and Typography */
+body {
+    font-family: 'Helvetica', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-    color: #ddd;  /* Lighter color on hover */
+/* Section for main content */
+.about-info {
+    padding-left: 40px; /* Add extra padding between image and text */
 }
 
-/* Center navbar links */
-.navbar-nav {
-    flex-direction: row;
+/* Buttons for CV, Scholar, Twitter */
+.btn {
+    margin-right: 10px; /* Add spacing between buttons */
 }
 
-/* Ensure image is responsive and aligned */
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Image Styling */
 .img-fluid {
     max-width: 100%;
     height: auto;
     margin-bottom: 20px; /* Add space below the image */
+}
+/* Add some margin below each card */
+.card {
+    margin-bottom: 20px;
+}
+
+/* Add more padding within each card */
+.card-body {
+    padding: 20px;  /* Increase padding slightly */
+}
+
+/* Customize the card title size */
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Minimalist, slim button style */
+.btn-outline-slim {
+    background-color: transparent;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 3px;
+    text-transform: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline-slim:hover {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-outline-slim:focus {
+    outline: none;
+    box-shadow: none;
 }
