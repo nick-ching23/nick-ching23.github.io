@@ -1,4 +1,4 @@
-/* General Styling */
+/* General Body Styles */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -6,106 +6,89 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    text-align: center;
+    text-align: left;
 }
 
-/* Header Section */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-/* About Me Section */
-#about-me {
-    padding: 40px;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
     background-color: #fff;
 }
 
-#about-me h2 {
-    font-size: 2em;
+header {
+    text-align: left;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
     color: #333;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0 0;
 }
 
 #about-me p {
     font-size: 1.2em;
-    color: #555;
-    margin: 20px 0;
-}
-
-/* Projects Section */
-#projects {
-    padding: 40px;
-    background-color: #eaeaea;
-}
-
-#projects h2 {
-    font-size: 2em;
-    color: #333;
-}
-
-#projects ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#projects ul li {
-    font-size: 1.2em;
     margin: 10px 0;
 }
 
-/* Contact Section */
-#contact {
-    padding: 40px;
-    background-color: #fff;
+#about-me a {
+    color: #0073e6;
+    text-decoration: none;
 }
 
-#contact h2 {
+#about-me a:hover {
+    text-decoration: underline;
+}
+
+#recent-news h2 {
     font-size: 2em;
+    margin-bottom: 15px;
     color: #333;
 }
 
-#contact p {
+#recent-news ul {
+    list-style: none;
+    padding: 0;
+}
+
+#recent-news ul li {
     font-size: 1.2em;
+    margin-bottom: 10px;
     color: #555;
 }
 
-/* Footer Section */
 footer {
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+    color: #888;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
 }
 
-footer p {
-    margin: 0;
+/* Links Styling */
+a {
+    color: #0073e6;
+    text-decoration: none;
 }
 
-footer button {
-    padding: 10px 20px;
-    font-size: 1em;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
-
-footer button:hover {
-    background-color: #777;
-}
-
-#dynamic-message {
-    margin-top: 20px;
-    font-size: 1.2em;
+a:hover {
+    text-decoration: underline;
 }
