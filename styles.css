@@ -3,6 +3,10 @@
     padding-left: 40px;  /* Add extra padding between image and text */
 }
 
+.navbar {
+  border-bottom: 2px solid #ddd; /* Light grey bottom line */
+}
+
 /* Custom colored bar at the top */
 .top-bar {
     background-color: #343a40; /* Dark background color */
