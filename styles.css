@@ -82,13 +82,12 @@ nav {
   transition: background-color 0.3s;
 }
 
-nav .nav-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 3rem;
+nav {
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 3rem;
   height: 56px;
 }
 
@@ -119,7 +118,7 @@ nav .nav-links a:hover {
 }
 
 /* ===== Theme Toggle Switch ===== */
-.theme-toggle {
+.toggle {
   position: relative;
   width: 32px;
   height: 18px;
@@ -131,7 +130,7 @@ nav .nav-links a:hover {
   transition: background-color 0.3s;
 }
 
-.theme-toggle::after {
+.toggle::after {
   content: '';
   position: absolute;
   top: 2px;
@@ -143,7 +142,7 @@ nav .nav-links a:hover {
   transition: transform 0.3s;
 }
 
-[data-theme="dark"] .theme-toggle::after {
+[data-theme="dark"] .toggle::after {
   transform: translateX(14px);
 }
 
@@ -241,7 +240,7 @@ nav .nav-links a:hover {
   color: var(--color-bg);
 }
 
-.diagram-svg {
+.connections {
   position: absolute;
   top: 0;
   left: 0;
@@ -250,10 +249,14 @@ nav .nav-links a:hover {
   pointer-events: none;
 }
 
-.diagram-svg line {
+.connections line {
   stroke: var(--color-muted);
   stroke-width: 1;
-  stroke-dasharray: 4 3;
+}
+
+.connections line.accent {
+  stroke: var(--color-accent);
+  opacity: 0.4;
 }
 
 /* Pulse Dots */
@@ -312,14 +315,31 @@ nav .nav-links a:hover {
 }
 
 .col-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid var(--color-text);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.col-header h2 {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
-  border-bottom: 2px solid var(--color-text);
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.75rem;
+}
+
+.col-header a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  transition: color 0.2s;
+}
+
+.col-header a:hover {
+  color: var(--color-text);
 }
 
 /* ===== Project Cards ===== */
@@ -338,11 +358,17 @@ nav .nav-links a:hover {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
 }
 
-.project-title {
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.project-top h3 {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
 .tech-tags {
@@ -381,6 +407,12 @@ nav .nav-links a:hover {
 }
 
 /* ===== Post Rows ===== */
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
 .post-row {
   padding: 1rem 0;
   border-bottom: 1px solid var(--color-border);
@@ -424,7 +456,20 @@ footer {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.75rem;
   color: var(--color-muted-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transition: border-color 0.3s;
+}
+
+footer a {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: var(--color-text);
 }
 
 /* ===== Blog Post Page ===== */
@@ -480,7 +525,7 @@ footer {
     gap: 1rem;
   }
 
-  nav .nav-inner {
+  nav {
     padding: 0 1.5rem;
   }
 
