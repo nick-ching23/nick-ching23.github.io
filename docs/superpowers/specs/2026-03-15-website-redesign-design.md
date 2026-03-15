@@ -18,6 +18,9 @@ Redesign nicholas ching's personal website from a Bootstrap-based academic portf
 - No resume PDF link
 - No skills lists, experience timelines, or testimonials
 - No profile photo in hero
+- No Open Graph / SEO meta tags (can add later)
+- No syntax highlighting library for blog code blocks (plain `<pre><code>` for now)
+- No accessibility audit (reasonable contrast for primary text; muted text colors are intentionally low-contrast for visual hierarchy)
 
 ## Site Structure
 
@@ -32,14 +35,16 @@ Redesign nicholas ching's personal website from a Bootstrap-based academic portf
 2. **Hero** — Two-column grid. Left: overline "Software Engineer", name, bio paragraph, GitHub + LinkedIn buttons. Right: animated system architecture node diagram.
 3. **Divider** — Thin horizontal rule.
 4. **Projects + Writing** — Side-by-side two-column grid (projects wider on left, writing on right).
-5. **Footer** — Copyright + email, monospace.
+5. **Footer** — `© {dynamic year} nicholas ching` + `nc2935@columbia.edu`, monospace. Year via `new Date().getFullYear()`.
 
 ### Blog Post Pages
 
 - Narrow centered column (~650px max-width)
 - Same fonts, grid background, and nav as homepage
 - Title, date, then content
-- Back link to homepage
+- Logo link (`nc`) in nav navigates back to homepage (no dedicated back arrow)
+- Each post is a hand-authored HTML file using a consistent boilerplate structure
+- Code blocks use `<pre><code>` with IBM Plex Mono — no syntax highlighting library (keep it simple, can add later)
 
 ## Visual Design
 
@@ -80,8 +85,22 @@ Animated node graph representing a system architecture:
 - `core` node is filled (dark background, light text)
 - `net`, `mem` nodes use accent color border
 - Dashed SVG lines connecting nodes
-- 3 pulsing blue dots animating along connections (CSS `@keyframes pulse`)
+- 3 pulsing blue dots animating along connections (CSS `@keyframes pulse` using `opacity` and `transform: scale()` only for GPU acceleration)
 - Coordinate labels (`0,0` and `n,n`) in corners for a technical/research touch
+
+**Node layout and edges** (absolute positioned within a 320x320 container):
+```
+       [sys]----------[net]
+        / \            / \
+       /   \          /   \
+     [io]  [core]  [mem]
+       \    / \      /
+        \ /   \    /
+       [log]  [api]
+```
+Edges: sys→core, sys→io, net→core, net→mem, io→log, core→log, core→api, mem→api
+
+The diagram uses a fixed 320x320px container with absolute-positioned `<div>` nodes and an SVG overlay for dashed connection lines. On screens below 768px, the diagram scales down proportionally via `transform: scale()` to fit.
 
 ### Interactions
 
@@ -89,13 +108,14 @@ Animated node graph representing a system architecture:
 - **Blog post rows**: Indent left on hover (`padding-left: 0.5rem`). Title turns accent blue.
 - **Nav links**: Color transition on hover.
 - **Hero buttons**: Fill to dark background on hover.
-- **Dark mode toggle**: CSS custom property swap via JS, smooth transition on `background-color` and `color`.
+- **Dark mode toggle**: Toggle switch element in nav (same as mockup — pill-shaped track with sliding circle). Swaps CSS custom properties via JS, smooth `0.3s` transition on `background-color` and `color`.
 
 ### Responsive Behavior
 
-- Hero grid collapses to single column on mobile (diagram below text)
-- Projects + Writing grid collapses to stacked layout (projects first, then writing)
-- Nav remains horizontal but may need condensed spacing on small screens
+Breakpoint: **768px**.
+
+- **Above 768px**: Two-column hero, side-by-side projects + writing, full nav
+- **Below 768px**: Single-column hero (diagram below text, scaled down), stacked projects then writing, nav stays horizontal with reduced gap (1rem) and smaller font
 - Grid background remains on all sizes
 
 ## Content
@@ -114,21 +134,27 @@ low-latency infrastructure, and data systems.
 #### jaq
 - **Tags**: C++, Bazel, SIMD, coroutines
 - **Description**: High-performance polyglot data query tool with interactive TUI. Streaming coroutines for memory-efficient processing, SIMD-accelerated parsing across JSON, YAML, TOML, and INI.
-- **Link**: GitHub repo (team project under tzhouhc/cs4995-project)
+- **Link**: https://github.com/tzhouhc/cs4995-project
 
 #### ShockNet
 - **Tags**: Haskell, parallelism, graphs
 - **Description**: Parallel graph computation engine implementing the Independent Cascade Model with Haskell parallelization primitives for concurrent network diffusion simulation.
-- **Link**: GitHub repo
+- **Link**: https://github.com/nick-ching23/ShockNet
 
 #### Boop
 - **Tags**: Python, BERT, NLP
 - **Description**: Fine-tuned BERT model for detecting self-harm risk in social media posts. Winner, Best Mental Health Project — Columbia ADI Hackathon 2024.
-- **Link**: GitHub repo
+- **Link**: https://github.com/nick-ching23/Boop
 
-### Writing (placeholder titles — to be written)
+### Writing
 
-Blog posts will be created as separate HTML files in a `blog/` directory. The homepage shows a preview list with title, date (`YYYY.MM` format), and one-line summary.
+Blog posts will be created as separate HTML files in a `blog/` directory. The homepage shows a preview list with title, date (`YYYY.MM` format), and one-line summary. Placeholder entries for initial build:
+
+1. **"On Designing Low-Latency Data Pipelines"** — `2026.03` — "Where the bottlenecks actually are in real-time ingestion at scale."
+2. **"Why Haskell Made Me a Better Systems Programmer"** — `2026.02` — "How types and purity changed the way I write C++ and reason about concurrency."
+3. **"Building a Query Engine in C++"** — `2026.01` — "Parsing, evaluation, and the surprising cost of string copies."
+
+These are placeholder titles. Blog post pages will be created empty (title + date only) and content written later.
 
 ## Technical Implementation
 
@@ -142,8 +168,8 @@ Blog posts will be created as separate HTML files in a `blog/` directory. The ho
 ├── blog/
 │   ├── post-1.html     # Individual blog posts
 │   └── ...
-├── laughing (1).png    # Existing favicon
-└── profile_pic.jpg     # Keep but unused (no longer displayed)
+├── favicon.png         # Renamed from "laughing (1).png"
+└── profile_pic.jpg     # Can be removed from git (unused)
 ```
 
 ### Dark Mode Implementation
