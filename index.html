@@ -1,153 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nicholas Ching</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="laughing (1).png">
-
 </head>
-
 <body>
-<!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="border-bottom: 2px solid #ddd;">
-      <div class="container">
-      <a class="navbar-brand font-weight-bold" href="index.html">Nicholas Ching</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="distributed_systems_ca.html">Distributed Systems Resources</a>
-          </li>
-        </ul>
-      </div>
+
+  <nav>
+    <a href="index.html" class="logo">nc</a>
+    <div class="nav-links">
+      <a href="#projects">projects</a>
+      <a href="#writing">writing</a>
+      <button class="toggle" id="theme-toggle" aria-label="Toggle dark mode"></button>
     </div>
   </nav>
 
-  <section class="container mt-5">
-    <div class="row align-items-center"> <!-- align-items-center vertically centers the text with the image -->
-      <div class="col-md-4">
-        <img src="profile_pic.jpg" class="img-fluid" alt="Your Photo">
-        <p class="small text-muted">Photo credit: Jeffrey Or</p>
+  <section class="hero">
+    <div class="hero-text">
+      <div class="overline">Software Engineer</div>
+      <h1>Nicholas Ching</h1>
+      <p class="bio">Software Engineer at <strong>Garda Capital Partners</strong>. MS Computer Science, <strong>Columbia University</strong>. I build reliable, performant systems — interested in distributed computing, low-latency infrastructure, and data systems.</p>
+      <div class="hero-links">
+        <a href="https://github.com/nick-ching23/" target="_blank" rel="noopener">github</a>
+        <a href="https://www.linkedin.com/in/nicholas-ching/" target="_blank" rel="noopener">linkedin</a>
       </div>
-      <div class="col-md-8 about-info">
-        <h1 class="display-4"><strong>Nicholas Ching</strong></h1>
-        <p class="lead">Computer Science Master Candidate at Columbia University</p>
-        <hr>
-        <p class="text-muted"> I am a Master's student pursuing a degree in Computer Science from Columbia University. I
-          graduated with two bachelor's degrees: Computer Science
-          from Columbia University and Computational Finance & Financial Technology from the City University of Hong
-          Kong. I am currently specializing in software systems, with an emphasis on building scalable, efficient and
-          resilient systems.
-        </p>
-        <p>Email: <a href="mailto:nc2935@columbia.edu">nc2935@columbia.edu</a></p>
-        <p>
-          <a href="https://www.linkedin.com/in/nicholas-ching/" class="btn btn-outline-primary"
-            target="_blank">LinkedIn</a>
-          <a href="https://github.com/nick-ching23/" class="btn btn-outline-primary" target="_blank">Github</a>
-        </p>
+    </div>
+    <div class="hero-diagram">
+      <div class="diagram-container">
+        <svg class="connections" viewBox="0 0 320 320">
+          <line x1="78" y1="48" x2="160" y2="148" stroke-dasharray="4 3" />
+          <line x1="78" y1="48" x2="38" y2="158" stroke-dasharray="4 3" class="accent" />
+          <line x1="232" y1="48" x2="160" y2="148" stroke-dasharray="4 3" />
+          <line x1="232" y1="48" x2="262" y2="158" stroke-dasharray="4 3" class="accent" />
+          <line x1="38" y1="158" x2="88" y2="252" stroke-dasharray="4 3" />
+          <line x1="160" y1="148" x2="88" y2="252" stroke-dasharray="4 3" class="accent" />
+          <line x1="160" y1="148" x2="222" y2="262" stroke-dasharray="4 3" />
+          <line x1="262" y1="158" x2="222" y2="262" stroke-dasharray="4 3" />
+        </svg>
+        <div class="node" style="top:20px;left:50px"></div>
+        <div class="node accent" style="top:20px;right:60px"></div>
+        <div class="node" style="top:130px;left:10px"></div>
+        <div class="node filled" style="top:120px;left:132px"></div>
+        <div class="node accent" style="top:130px;right:30px"></div>
+        <div class="node" style="bottom:40px;left:60px"></div>
+        <div class="node" style="bottom:30px;right:70px"></div>
+        <div class="pulse-dot" style="top:95px;left:95px;animation-delay:0s"></div>
+        <div class="pulse-dot" style="top:85px;right:100px;animation-delay:0.7s"></div>
+        <div class="pulse-dot" style="bottom:85px;left:130px;animation-delay:1.4s"></div>
+        <div class="coord-label" style="top:0;left:0">0,0</div>
+        <div class="coord-label" style="bottom:0;right:0">n,n</div>
       </div>
     </div>
   </section>
 
-  <section class="container mt-5" id="projects">
-    <h2><strong>Projects</strong></h2>
-    <p>A Glimpse Into Projects I'm Passionate About—Using Technology to Drive Social Good and Solve Real-World Problems!
-    </p>
+  <div class="divider"><hr></div>
 
+  <section class="section">
+    <div class="two-col">
+      <div id="projects">
+        <div class="col-header">
+          <h2>Projects</h2>
+        </div>
 
-    <div class="row">
-       <!-- Project 1 Card -->
-       <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Boop</h5>
-            <p class="card-text">Utilizing a fine-tuned BERT model to detect if users are at risk of self-harm or
-              suicide based on their social media posts</p>
-            <a href="https://github.com/nick-ching23/Boop" target="_blank" class="btn btn-outline-slim">GitHub Repo</a>
-          </div>
-        </div>
-      </div>     
-     <!-- Project 2 Card -->
-     <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">ShockNet</h5>
-          <p class="card-text">Haskell-based implement of the Independent Cascade Model, utilizing parallelization techniques for scalabibility</p>
-          <a href="https://github.com/nick-ching23/ShockNet" target="_blank" class="btn btn-outline-slim">GitHub Repo</a>
-        </div>
-      </div>
-    </div>
-    <!-- Project 3 Card -->
-    <div class="col-md-4">
-      <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Veritas</h5>
-                <p class="card-text">Utilizing black-box detection to create a service for identifying AI-generated text
-                  across domain spaces
-                </p>
-                <a href="https://github.com/nick-ching23/pineapple" target="_blank" class="btn btn-outline-slim">GitHub
-                  Repo</a>
-              </div>
+        <div class="project-card">
+          <div class="project-top">
+            <h3>jaq</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Bazel</span>
+              <span class="tech-tag">SIMD</span>
+              <span class="tech-tag">coroutines</span>
             </div>
           </div>
-    </div>
+          <p class="project-desc">High-performance polyglot data query tool with interactive TUI. Streaming coroutines for memory-efficient processing, SIMD-accelerated parsing across JSON, YAML, TOML, and INI.</p>
+          <a href="https://github.com/tzhouhc/cs4995-project" target="_blank" rel="noopener" class="project-link">&rarr; github</a>
+        </div>
 
-    <div class="row">
-      <!-- Project 4 Card -->
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Lucidity</h5>
-            <p class="card-text">Automated financial statement modeling, using ChatGPT-4o to explain valuation outcomes
-            </p>
-            <a href="https://github.com/nick-ching23/lucidity" target="_blank" class="btn btn-outline-slim">GitHub
-              Repo</a>
+        <div class="project-card">
+          <div class="project-top">
+            <h3>ShockNet</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Haskell</span>
+              <span class="tech-tag">parallelism</span>
+              <span class="tech-tag">graphs</span>
+            </div>
           </div>
+          <p class="project-desc">Parallel graph computation engine implementing the Independent Cascade Model with Haskell parallelization primitives for concurrent network diffusion simulation.</p>
+          <a href="https://github.com/nick-ching23/ShockNet" target="_blank" rel="noopener" class="project-link">&rarr; github</a>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <h3>Boop</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">BERT</span>
+              <span class="tech-tag">NLP</span>
+            </div>
+          </div>
+          <p class="project-desc">Fine-tuned BERT model for detecting self-harm risk in social media posts. Winner, Best Mental Health Project — Columbia ADI Hackathon 2024.</p>
+          <a href="https://github.com/nick-ching23/Boop" target="_blank" rel="noopener" class="project-link">&rarr; github</a>
         </div>
       </div>
 
+      <div id="writing">
+        <div class="col-header">
+          <h2>Writing</h2>
+          <a href="#">all &rarr;</a>
+        </div>
 
+        <div class="post-row">
+          <div class="post-meta">
+            <a href="blog/post-1.html" class="post-title">On Designing Low-Latency Data Pipelines</a>
+            <span class="post-date">2026.03</span>
+          </div>
+          <p class="post-preview">Where the bottlenecks actually are in real-time ingestion at scale.</p>
+        </div>
+
+        <div class="post-row">
+          <div class="post-meta">
+            <a href="blog/post-2.html" class="post-title">Why Haskell Made Me a Better Systems Programmer</a>
+            <span class="post-date">2026.02</span>
+          </div>
+          <p class="post-preview">How types and purity changed the way I write C++ and reason about concurrency.</p>
+        </div>
+
+        <div class="post-row">
+          <div class="post-meta">
+            <a href="blog/post-3.html" class="post-title">Building a Query Engine in C++</a>
+            <span class="post-date">2026.01</span>
+          </div>
+          <p class="post-preview">Parsing, evaluation, and the surprising cost of string copies.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-
-  <!-- Recent News Section -->
-  <section class="container mt-5" id="news">
-    <h2><strong>Recent News</strong></h2>
-    <ul>
-      <li> <strong>💼 Jun 2025:</strong> Started working at Garda Capital Partners!</li>
-      <li> <strong>📚 May 2025:</strong> Completed Encrypted Echoes project -- exploring machine learning based TLS fingerprinting </li>
-      <li> <strong>🧑🏻‍💻 Nov 2024:</strong> Accepted an offer for a Software Engineering Internship @ Garda Capital Partners</li>
-      <li> <strong>🦁 Aug 2024:</strong> Started Master's in Computer Science at Columbia University </li>
-      <li> <strong>✅ Jul 2024:</strong> Completed Lucidity Project! Check it out here: <a
-          href="https://github.com/nick-ching23/lucidity"> View Project</a></li>
-      <li>🎓 <strong>May 2024:</strong> Graduated with First Class Honors from the City University of Hong Kong
-        and Columbia University</li>
-      <li>🏆 <strong>Jan 2024:</strong> Won the best mental health project at Columbia 2024 ADI Hackathon. <a
-          href="https://github.com/nick-ching23/Boop">View project</a></li>
-    </ul>
-  </section>
-
-  <!-- Footer Section -->
-  <footer class="container mt-5">
-    <hr>
-    <p class="text-center">&copy; 2024 Nicholas Ching. All rights reserved.</p>
+  <footer>
+    <span>&copy; <span id="year"></span> nicholas ching</span>
+    <a href="mailto:nc2935@columbia.edu">nc2935@columbia.edu</a>
   </footer>
 
-  <!-- Bootstrap and JS Dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
