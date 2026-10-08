@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Photography &middot; Nicholas Ching</title>
+  <meta name="description" content="Photography by Nicholas Ching.">
+  <link rel="icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="photos.css?v=5">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="index.html" class="brand">Nicholas Ching</a>
+      <nav>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#education">Education</a>
+        <a href="photography.html" class="active">Photography</a>
+      </nav>
+      <a class="pill pill-dark" href="mailto:nc2935@columbia.edu">Contact</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <a class="back" href="index.html">&larr; Back</a>
+      <h1>Photography</h1>
+      <p>Pictures from travel, cities and people.</p>
+    </section>
+
+    <section class="gallery" aria-label="Photographs">
+      <div class="row">
+        <button class="shot" data-index="0" style="--ar: 0.6665"><img src="photos/01.jpg" alt="Towels drying on a boat deck above a calm bay with mountains behind" width="1333" height="2000" loading="lazy"></button>
+        <button class="shot" data-index="1" style="--ar: 0.6530"><img src="photos/04.jpg" alt="A volcano erupting a plume of ash at dusk" width="717" height="1098" loading="lazy"></button>
+        <button class="shot" data-index="2" style="--ar: 1.5000"><img src="photos/05.jpg?v=2" alt="Someone photographing a herd of elephants at a waterhole through a car window" width="1086" height="724" loading="lazy"></button>
+      </div>
+      <div class="row">
+        <button class="shot" data-index="3" style="--ar: 0.6667"><img src="photos/02.jpg" alt="A woman in a white skirt on a grassy headland above the sea, with mountains and a town behind" width="724" height="1086" loading="lazy"></button>
+        <button class="shot" data-index="4" style="--ar: 0.6665"><img src="photos/06.jpg" alt="Painted eaves and roof ornaments of a Chinese temple" width="1333" height="2000" loading="lazy"></button>
+        <button class="shot" data-index="5" style="--ar: 0.6681"><img src="photos/07.jpg?v=2" alt="Portrait of a woman leaning on a concrete wall" width="628" height="940" loading="lazy"></button>
+      </div>
+      <div class="row">
+        <button class="shot" data-index="6" style="--ar: 1.5000"><img src="photos/08.jpg" alt="A woman in a red coat walking past a colourful dragon and lion mural" width="2000" height="1333" loading="lazy"></button>
+        <button class="shot" data-index="7" style="--ar: 0.6665"><img src="photos/03.jpg" alt="A silhouette taking a photo behind glass at a rooftop bar at sunset" width="1333" height="2000" loading="lazy"></button>
+        <button class="shot" data-index="8" style="--ar: 0.6667"><img src="photos/09.jpg" alt="Red temple roof beams rising into a white sky" width="724" height="1086" loading="lazy"></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">
+    <span>&copy; <span id="year"></span> Nicholas Ching</span>
+    <a href="mailto:nc2935@columbia.edu">nc2935@columbia.edu</a>
+  </footer>
+
+  <dialog class="viewer" aria-label="Photo viewer">
+    <img src="photos/01.jpg" alt="">
+    <button class="viewer-btn viewer-close" aria-label="Close">&times;</button>
+    <button class="viewer-btn viewer-prev" aria-label="Previous photo">&larr;</button>
+    <button class="viewer-btn viewer-next" aria-label="Next photo">&rarr;</button>
+    <p class="viewer-count"></p>
+  </dialog>
+
+  <script src="photos.js?v=3"></script>
+</body>
+</html>

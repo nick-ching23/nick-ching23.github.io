@@ -1,0 +1,372 @@
+:root {
+  --bg: #ffffff;
+  --ink: #111214;
+  --body: #4a4d54;
+  --muted: #868991;
+  --line: #ececee;
+  --accent: #1f3d73;
+  --font: 'Geist', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Top bar (matches the home page) */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 64px;
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.topbar nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-right: auto;
+}
+
+.topbar nav a {
+  color: var(--muted);
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.topbar nav a:hover,
+.topbar nav a.active {
+  color: var(--ink);
+}
+
+.pill {
+  display: inline-block;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.pill-dark {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+/* Intro */
+.intro {
+  padding: 3.5rem 0 2.5rem;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: var(--ink);
+}
+
+.intro h1 {
+  color: var(--ink);
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.intro p {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+
+/* Justified rows: each photo grows in proportion to its aspect ratio,
+   so every photo in a row shares one height and the row fills the width exactly */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.shot {
+  flex: var(--ar) 1 0%;
+  display: block;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f3f3f4;
+  cursor: zoom-in;
+}
+
+.shot {
+  position: relative;
+}
+
+/* Hairline edge so photos with white skies keep a defined frame on the white page */
+.shot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(17, 18, 20, 0.07);
+  pointer-events: none;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease;
+}
+
+@media (hover: hover) {
+  .shot:hover img {
+    transform: scale(1.02);
+  }
+}
+
+.shot:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.825rem;
+}
+
+.footer a {
+  color: var(--muted);
+}
+
+/* Full-screen viewer */
+.viewer {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(10, 10, 12, 0.96);
+}
+
+.viewer[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer::backdrop {
+  background: rgba(10, 10, 12, 0.96);
+}
+
+.viewer img {
+  max-width: calc(100vw - 8rem);
+  max-height: calc(100vh - 6rem);
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.viewer-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-family: var(--font);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.viewer-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.viewer-close {
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.viewer-prev {
+  left: 1.25rem;
+  top: 50%;
+  margin-top: -22px;
+}
+
+.viewer-next {
+  right: 1.25rem;
+  top: 50%;
+  margin-top: -22px;
+}
+
+.viewer-count {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0;
+  right: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 16px;
+  }
+
+  .wrap {
+    padding: 0 1.25rem;
+  }
+
+  .topbar nav {
+    display: none;
+  }
+
+  .topbar-inner {
+    justify-content: space-between;
+  }
+
+  .intro {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  /* Phones: drop the rows and show one full-width photo at a time */
+  .gallery {
+    gap: 0.75rem;
+  }
+
+  .row {
+    display: contents;
+  }
+
+  .shot {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .viewer img {
+    max-width: 100vw;
+    max-height: calc(100vh - 8rem);
+    border-radius: 0;
+  }
+
+  .viewer-prev,
+  .viewer-next {
+    top: auto;
+    bottom: 1rem;
+    margin-top: 0;
+  }
+
+  .viewer-count {
+    bottom: 1.9rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shot img {
+    transition: none;
+  }
+}
+
+/* Phone footer: a clear close to the page with the email as the last action */
+@media (max-width: 760px) {
+  .footer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-top: 1rem;
+    padding-top: 2rem;
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
+  }
+
+  .footer a {
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+}
+
+/* Phones: lead with the strongest shots (desktop keeps the balanced row layout) */
+@media (max-width: 760px) {
+  .shot:has(img[src*="photos/04"]) { order: 1; }
+  .shot:has(img[src*="photos/08"]) { order: 2; }
+  .shot:has(img[src*="photos/05"]) { order: 3; }
+  .shot:has(img[src*="photos/06"]) { order: 4; }
+  .shot:has(img[src*="photos/02"]) { order: 5; }
+  .shot:has(img[src*="photos/07"]) { order: 6; }
+  .shot:has(img[src*="photos/03"]) { order: 7; }
+  .shot:has(img[src*="photos/09"]) { order: 8; }
+  .shot:has(img[src*="photos/01"]) { order: 9; }
+}
